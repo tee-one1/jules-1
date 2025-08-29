@@ -29,4 +29,4 @@ async function getWeatherData() {
 }
 
 // Call the function to fetch and log the weather data
-getWeatherData();
+const city = 'Istanbul';
