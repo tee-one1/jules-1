@@ -1,1 +1,1 @@
-var city = 'Istanbul';
+const city = 'Istanbul';
