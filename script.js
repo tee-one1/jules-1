@@ -20,8 +20,10 @@ async function getWeatherData() {
     // Parse the JSON response
     const weatherData = await response.json();
 
-    // Log the entire weather data object to the console
-    console.log(weatherData);
+    // Update the DOM with the fetched weather data
+    document.getElementById('city').textContent = 'Istanbul';
+    document.getElementById('temperature').textContent = `${Math.round(weatherData.current.temp)}°C`;
+    document.getElementById('description').textContent = weatherData.current.weather[0].description;
   } catch (error) {
     // Log any errors to the console
     console.error('Error fetching weather data:', error);
@@ -29,4 +31,4 @@ async function getWeatherData() {
 }
 
 // Call the function to fetch and log the weather data
-const city = 'Istanbul';
+getWeatherData();
