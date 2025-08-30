@@ -5,7 +5,7 @@ async function getWeatherData() {
   // Istanbul coordinates
   const lat = 41.01;
   const lon = 28.98;
-  const apiKey = '37477681ad8fc75255637d5c7bc348e2'; // Placeholder for the API key
+  const apiKey = '6b4faed27acdec36d52b6241403f0bcc'; // Placeholder for the API key
   const url = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`;
 
   try {
