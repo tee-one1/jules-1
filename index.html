@@ -1,16 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Hava Durumu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎨 AI Çizgi Roman Atölyesi</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="weather-card">
-        <h1 id="city">Şehir Yükleniyor...</h1>
-        <p id="temperature">--°C</p>
-        <p id="description">...</p>
-    </div>
+
+    <header>
+        <h1>🎨 AI Çizgi Roman Atölyesi</h1>
+        <p>Kısa hikayenizi yapay zeka ile çizgi romana dönüştürün!</p>
+    </header>
+
+    <main>
+        <div class="studio-container">
+            <!-- Aşama 1: Hikaye Özeti -->
+            <section id="story-input-section" class="studio-section">
+                <h2>Aşama 1: Hikayenizi Yazın</h2>
+                <p>En fazla 10 panele bölünebilecek kısa bir sahne veya hikaye girin.</p>
+                <textarea id="story-text" rows="6" placeholder="Örn: 'Kaybolan kedisini arayan bir android, neon ışıklı bir pazar yerinde gizemli bir ipucu bulur.'"></textarea>
+            </section>
+
+            <!-- Aşama 3: Sanat Tarzı Seçimi -->
+            <section id="style-selection-section" class="studio-section">
+                <h2>Aşama 3: Sanat Tarzını Seçin</h2>
+                <div id="style-choices">
+                    <div class="style-option" data-style="vintage">
+                        <img src="https://placehold.co/150x100/f8d7da/212529?text=Vintage" alt="Vintage Çizgi Roman">
+                        <span>Vintage Çizgi Roman</span>
+                    </div>
+                    <div class="style-option" data-style="manga">
+                        <img src="https://placehold.co/150x100/d1ecf1/212529?text=Manga" alt="Manga/Anime">
+                        <span>Manga/Anime</span>
+                    </div>
+                    <div class="style-option" data-style="cyberpunk">
+                        <img src="https://placehold.co/150x100/d4edda/212529?text=Cyberpunk" alt="Siberpunk Noir">
+                        <span>Siberpunk Noir</span>
+                    </div>
+                    <div class="style-option" data-style="fantasy">
+                        <img src="https://placehold.co/150x100/fff3cd/212529?text=Fantastik" alt="Fantastik Suluboya">
+                        <span>Fantastik Suluboya</span>
+                    </div>
+                </div>
+                 <input type="hidden" id="selected-style" value="">
+            </section>
+
+            <button id="generate-comic-btn">Çizgi Romanı Oluştur!</button>
+
+            <div id="loading-indicator" class="hidden">
+                <p>Paneller oluşturuluyor... Lütfen bekleyin.</p>
+                <div class="spinner"></div>
+            </div>
+
+            <!-- Aşama 4-6: Panel Üretimi, Diyalog ve Final Sayfa -->
+            <section id="comic-display-section" class="studio-section hidden">
+                <h2>İşte Çizgi Romanınız!</h2>
+                <p>Panellere tıklayarak konuşma baloncukları ekleyebilirsiniz.</p>
+                <div id="comic-strip">
+                    <!-- Paneller buraya eklenecek -->
+                </div>
+                <div id="dialogue-modal" class="hidden">
+                    <div class="modal-content">
+                        <span class="close-button">&times;</span>
+                        <h3>Diyalog Ekle</h3>
+                        <input type="text" id="dialogue-text" placeholder="Konuşma metnini yazın...">
+                        <button id="add-dialogue-btn">Baloncuğu Ekle</button>
+                    </div>
+                </div>
+                 <button id="download-btn" class="hidden">Çizgi Romanı İndir</button>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>Yapay Zeka Sanat Projesi</p>
+    </footer>
+
+    <!-- html2canvas kütüphanesi -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
